@@ -9,8 +9,8 @@ app.secret_key = "Data_Mining"
 
 ### DB Connections
 conn = pyodbc.connect('Driver={SQL Server};'
-                      'Server=LAPTOP-9B4F4L4E;'
-                      'Database=DataMining_A1;'
+                      'Server=<Server_name>;'
+                      'Database=<DB_name>;'
                       'Trusted_Connection=yes;', autocommit = True)
 cursor = conn.cursor()
 
