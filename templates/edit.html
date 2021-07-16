@@ -1,0 +1,178 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <title>Update Details</title>
+    <style>
+        body{
+           
+          height: 100%;
+        }
+
+* {
+  box-sizing:content-box;
+}
+
+         
+.bg-img {
+  /* The image used */
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/04/Scratched-Green-Textured-Background.jpg");
+min-height:1410px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position:absolute;
+    top:0%;
+  left: 8%;
+    margin: 10px;
+  max-width: 1200px;
+  padding: 50px;
+  background-color:rgba(0, 0, 0, 0.6);
+    color:white;
+    font-size: 20px;
+    text-align: left;
+}
+        
+        .btn {
+            
+  background-color:aqua;
+  color:aquamarine;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+        .btn-group .button {
+            background-color: #1c87c9;
+        -webkit-border-radius: 60px;
+        border-radius: 0px;
+        border: none;
+        color: #eeeeee;
+        cursor: pointer;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 20px;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0px 5px;
+        }
+@keyframes glowing {
+        0% {
+          background-color:Blue;;
+          box-shadow: 0 0 5px #2ba805;
+    }
+    50% {
+          background-color:orangered;
+          box-shadow: 0 0 20px #49e819;
+        }
+        100% {
+          background-color:#2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+      }
+      .button {
+        animation: glowing 1300ms infinite;
+      }
+                
+.btn:hover {
+  opacity: 1;
+        }
+table.dataframe, .dataframe th, .dataframe td {
+    top:5;
+    left:50;
+      border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:center;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+}
+.male th {
+    background-color: #add8e6;
+    color: black;
+}
+.female th {
+    background-color:black;
+    color: white;
+}
+        tr:nth-child(odd)		{ background-color:white}
+        tr:nth-child(even)	{ background-color:black}
+
+        .block {
+  display: block;
+  width: 95.5%;
+  border: none;
+  background-color: #04AA6D;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+              </style>
+    
+    </head>
+<body>
+        <div class="bg-img">
+            
+            <form method="get" action="http://127.0.0.1:5000/">
+                <br><br>
+                <div class="btn-group"> 
+     <h5><button class="button">Home</button></h5>
+                </div>
+        </form>
+                   
+          <p>
+            <form method="post" , action="http://127.0.0.1:5000/add_details", class="container">
+     
+         <h1 style="font-display: block;font-size: 28px;font-family:fantasy ;text-align: center;color:#FFFFFF;"> Below are the selected</h1>
+
+                {% for value in out %}
+   {{value|safe}} 
+    {% endfor %}
+            
+            <form method="post" , action="http://127.0.0.1:5000/add_details">
+               
+                <label for="Rank"><h3>Rank:</h3></label>
+                
+                    <input type="number"style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;" placeholder="Rank" name="rank" value="{{ran}}" readonly >
+                
+                        <p>
+                            <label for="Model"><h3>Model:</h3></label>
+        <input type="text" style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;"placeholder="Model" name="model" value="{{mod}}">
+                </p>
+                 <p>
+             <label for="Specs"><h3>Specifications:</h3></label>
+        <input type="text" style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;"placeholder="Specs" name="specs" value="{{spe}}">
+                </p>
+                <p> <label for="Price"><h3>Price:</h3></label>
+        <input type="text"style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;" placeholder="Price" name="price" value="{{pri}}">
+                </p>
+                 <p> <label for="Rating"><h3>Rating:</h3></label>
+                     <input type="text"style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;" placeholder="Rating" name="rating" value="{{rat}}"></p>
+                <p> 
+            <label for="Rank"><h3>Votes:</h3></label>
+        <input type="text" style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;"placeholder="Votes" name="votes" value="{{vot}}">
+                </p>
+<p> 
+            <label for="Image"><h3>Image URL:</h3></label>
+        <input type="text" style="width: 100%; padding: 3px 8px; margin: 8px 0; box-sizing: border-box;"placeholder="Image URL" name="image" value="{{img}}">
+                </p>
+       <button type="submit" class="block">Update</button>
+                </form>
+    </div>
+            </body>
+</html>
+

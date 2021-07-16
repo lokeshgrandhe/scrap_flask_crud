@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Deleting Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .bg-img {
+            /* The image used */
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.0)), url("https://www.lifewire.com/thmb/aQs6O3Y81ZOOyXPf22C_C2fd4sc=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/a-delete-button-close-up-picture-of-a-keyboard-171114345-57bdf90e5f9b5855e5473e21.jpg");
+            min-height: 760px;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Add styles to the form container */
+        .container {
+            position: absolute;
+            top: 10%;
+            left: 15%;
+            margin: 10px;
+            max-width: 1200px;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: aqua;
+            color: aquamarine;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn-group .button {
+            background-color: #1c87c9;
+            -webkit-border-radius: 60px;
+            border-radius: 0px;
+            border: none;
+            color: #eeeeee;
+            cursor: pointer;
+            display: inline-block;
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            margin: 0px 10px;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-color: Blue;
+                ;
+                box-shadow: 0 0 5px #2ba805;
+            }
+
+            50% {
+                background-color: orangered;
+                box-shadow: 0 0 20px #49e819;
+            }
+
+            100% {
+                background-color: #2ba805;
+                box-shadow: 0 0 5px #2ba805;
+            }
+        }
+
+        .button {
+            animation: glowing 1300ms infinite;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        table.dataframe, .dataframe th, .dataframe td {
+            top: 5;
+            left: 50;
+            border: none;
+            border-bottom: 1px solid #C8C8C8;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            word-wrap: break-word;
+        }
+
+        .male th {
+            background-color: #add8e6;
+            color: black;
+        }
+
+        .female th {
+            background-color: black;
+            color: black;
+        }
+
+        tr:nth-child(odd) {
+            background-color: black
+        }
+
+        tr:nth-child(even) {
+            background-color: black
+        }
+    </style>
+
+</head>
+<body>
+    <div class="bg-img">
+        <br><h2 style="text-align: center;">
+            Do you want to delete the Below entry?
+        </h2>
+        <form method="get" action="http://127.0.0.1:5000/">
+            <div class="btn-group">
+                <h5><button class="button">Home</button></h5>
+            </div>
+
+        </form>
+        <form method="post" , action="http://127.0.0.1:5000/add_details" , class="container">
+            <p>
+                {% for value in out %}
+                {{value|safe}}
+                {% endfor %}
+            </p>
+
+            <input type="submit" onclick="return confirm('Are you sure?')" />
+
+        </form>
+        <form method="post" , action="http://127.0.0.1:5000/add_details">
+        </form>
+    </div>
+</body>
+</html>

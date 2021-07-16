@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Add Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .bg-img {
+            /* The image used */
+            background-image: url("https://martech.org/wp-content/ml-loads/2014/08/mobile-smartphones-apps2-ss-1920.jpg");
+            min-height: 1180px;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Add styles to the form container */
+        .container {
+            position: absolute;
+            top: 0%;
+            left: 35%;
+            margin: 10px;
+            max-width: 1000px;
+            padding: 100px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: left;
+        }
+
+        .btn {
+            background-color: aqua;
+            color: aquamarine;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn-group .button {
+            background-color: #1c87c9;
+            -webkit-border-radius: 60px;
+            border-radius: 0px;
+            border: none;
+            color: #eeeeee;
+            cursor: pointer;
+            display: inline-block;
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 10px 97px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-color: #2ba805;
+                box-shadow: 0 0 5px #2ba805;
+            }
+
+            50% {
+                background-color: #49e819;
+                box-shadow: 0 0 20px #49e819;
+            }
+
+            100% {
+                background-color: #2ba805;
+                box-shadow: 0 0 5px #2ba805;
+            }
+        }
+
+        .button {
+            animation: glowing 1300ms infinite;
+        }
+
+        .btn:hover {
+            opacity: 1;
+    </style>
+    <style>
+        input {
+            width: 100%;
+            padding: 8px 15px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #F5FFFA;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="bg-img">
+        <form method="get" action="http://127.0.0.1:5000/">
+            <div class="btn-group">
+                <h5><button class="button">Home</button></h5>
+            </div>
+
+        </form>
+        <form method="post" , action="http://127.0.0.1:5000/add_details" , class="container" ,"form-inline">
+
+            <h1 style="font-display: block;font-size: 28px;">Add New Model</h1>
+            <p>
+                <label for="Rank"><h3>Rank:</h3></label>
+                <input type="number" placeholder="Rank" name="rank" value={{last+1}} readonly />
+            </p>
+            <p>
+                <label for="Model"><h3>Model:</h3></label>
+                <input type="text" placeholder="Model" name="model" />
+            </p>
+            <p>
+                <label for="Specs"><h3>Specifications:</h3></label>
+                <input type="text" placeholder="Specs" name="specs" />
+            </p>
+
+            <p>
+                <label for="Price"><h3>Price:</h3></label>
+                <input type="text" placeholder="Price" name="price" />
+            </p>
+
+            <p>
+                <label for="Rating"><h3>Rating:</h3></label>
+                <input type="text" placeholder="Rating" name="rating" />
+            </p>
+
+            <p>
+                <label for="Votes"><h3>Votes:</h3></label>
+                <input type="text" placeholder="Votes" name="votes" />
+            </p>
+
+            <p>
+                <label for="Image"><h3>Image:</h3></label>
+                <input type="text" placeholder="Image URL" name="image" />
+            </p>
+            <div class="btn-group">
+                <button class="button"><span>Add</span></button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
